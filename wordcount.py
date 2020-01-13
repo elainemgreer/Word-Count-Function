@@ -6,7 +6,7 @@
 
 #copy loop but change letter to word
 
-def count_words_in_doc(file_name, value=True):
+def count_words_in_doc(file_name):
 
     word_counts = {}
 
@@ -19,9 +19,18 @@ def count_words_in_doc(file_name, value=True):
             word = word.lower()
             word_counts[word] = word_counts.get(word, 0) + 1
 
+    return word_counts
+
+word_counts = count_words_in_doc("test.txt")
+
+def print_word_counts(word_counts):
+
     for word in word_counts:
         print(word, word_counts[word])
 
-    return word_counts
 
-count_words_in_doc("test.txt")
+
+print_word_counts(word_counts)
+
+
+# count_words_in_doc(word_counts)
